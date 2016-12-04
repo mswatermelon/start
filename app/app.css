@@ -23,3 +23,15 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.grass{
+  color: green
+}
+
+.fire{
+  color: red;
+}
+
+.water{
+  color: blue;
+}

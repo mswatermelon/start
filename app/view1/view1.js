@@ -9,7 +9,7 @@ angular.module('myApp.view1', ['ngRoute'])
         });
     }])
 
-    .controller('View1Ctrl', function ($scope) {
+    .controller('View1Ctrl', function ($scope, $filter) {
         $scope.pokemons = [{
             "abilities": [
                 "Overgrow"
@@ -122,4 +122,14 @@ angular.module('myApp.view1', ['ngRoute'])
 
         $scope.myOrderProperty = 'id';
 
+        $scope.show = function(text) {
+          alert(text);
+        }
+
+        $scope.pokemons2 = $scope.pokemons;
+
+        $scope.$watch('myQuery', function(val)
+        {
+          $scope.pokemons = $filter('filter')($scope.pokemons2, val);
+        });
     });
